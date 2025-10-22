@@ -19,9 +19,7 @@ function Carrinho() {
 
   // 3. Gerar a Mensagem do WhatsApp e Redirecionar
   const handleFinalizarCompra = () => {
-    // IMPORTANTE: Troque pelo seu número de WhatsApp no formato internacional
-    // (Ex: 55 para o Brasil, 351 para Portugal) + DDD + Número
-    const numeroWhatsApp = '5532991147944'; // Ex: 5532999998888
+    const numeroWhatsApp = '5532984860949'; 
 
     let mensagem = 'Olá! Gostaria de fazer o seguinte pedido:\n\n';
     
