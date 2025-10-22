@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+// Importa os nossos 3 componentes de página
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Menu from './components/Menu';
+// 1. Importar o novo componente
+import Carrinho from './components/Carrinho'; 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cardapio" element={<Menu />} />
+        
+        {/* 2. Adicionar a nova rota */}
+        <Route path="/carrinho" element={<Carrinho />} />
+      </Routes>
     </div>
   );
 }

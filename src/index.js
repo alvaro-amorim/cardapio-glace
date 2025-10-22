@@ -1,17 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+
+// 1. Importar o Bootstrap CSS (primeiro)
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+// 2. (NOVA LINHA) Importar o Bootstrap JavaScript (Bundle)
+// Isto adiciona a lógica para Toggles, Dropdowns, Modals, etc.
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+// 3. Importar o SEU CSS (por último)
+import './index.css'; 
+
+import { BrowserRouter } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <CartProvider>
+        <App />
+      </CartProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
