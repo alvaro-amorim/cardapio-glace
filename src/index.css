@@ -102,3 +102,59 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--cor-confeitaria-vermelho) !important;
   font-weight: bold;
 }
+
+/* --- ESTILOS DOS BOTÕES DESATIVADOS --- */
+/* Isto corrige o botão azul 'Sob consulta' */
+
+.btn-primary:disabled,
+.btn-primary.disabled {
+  /* Usamos a cor base vermelha */
+  background-color: var(--cor-confeitaria-vermelho);
+  border-color: var(--cor-confeitaria-vermelho);
+  
+  /* E aplicamos a opacidade padrão do Bootstrap (0.65)
+     para lhe dar a aparência de "opaco/desativado" */
+  opacity: 0.65;
+}
+
+
+/* --- ESTILOS DO FOOTER (MODIFICADO) --- */
+
+.footer-confeitaria {
+  /* NOVO: Fundo vermelho da marca */
+  background-color: var(--cor-confeitaria-vermelho);
+  
+  /* Removemos a borda e sombra que não são mais necessárias 
+     no fundo vermelho */
+}
+
+/* Estilo dos ícones de rede social */
+.social-icon {
+  /* Tamanho dos ícones */
+  font-size: 2rem; 
+  
+  /* NOVO: Cor dos ícones */
+  color: #fcfaf1;
+  
+  /* Espaçamento entre os ícones */
+  margin: 0 10px;
+  
+  /* Transição suave para o hover */
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Cor dos ícones ao passar o rato (leve fade) */
+.social-icon:hover {
+  opacity: 0.8;
+}
+
+/* NOVA CLASSE para o texto do copyright */
+.footer-text {
+  color: #fcfaf1;
+}
+
+/* NOVA CLASSE ADICIONAL para o copyright "bem pequeno" */
+.footer-copyright {
+  font-size: 0.8rem; /* Deixa o texto ~20% menor que o padrão */
+  opacity: 0.9; /* Um pouco mais suave */
+}
