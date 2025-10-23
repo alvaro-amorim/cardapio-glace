@@ -17,14 +17,14 @@ function Footer() {
             <img 
               src="/images/icone.png" 
               alt="Ícone Glacê Confeitaria" 
-              style={{ height: '50px' }} 
+              style={{ height: '50px', margin: '-30px'}} 
             />
           </div>
 
           {/* 3. Colocamos os Ícones também como 'inline-block' */}
           <div className="d-inline-block align-middle">
             <a 
-              href="https://www.instagram.com/SEU_USUARIO_AQUI" 
+              href="https://www.instagram.com/glaceconfeitariaa" 
               target="_blank" 
               rel="noopener noreferrer"
               className="social-icon"
@@ -33,7 +33,7 @@ function Footer() {
               <FaInstagram />
             </a>
             <a 
-              href="https://api.whatsapp.com/send?phone=SEU_NUMERO_WHATSAPP_AQUI" 
+              href="https://api.whatsapp.com/send?phone=5532984860949" 
               target="_blank" 
               rel="noopener noreferrer"
               className="social-icon"
