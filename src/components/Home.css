@@ -1,27 +1,49 @@
 /*
   CSS modificado para mostrar uma única imagem
-  em tela cheia.
+  em tela cheia, e um botão flutuante (CTA).
 */
 
 .home-container {
-  /* Define a altura para 100% da altura da janela (viewport height) */
-  height: 100vh;
-  width: 100vw; /* 100% da largura da janela (viewport width) */
-  overflow: hidden; /* Garante que a imagem não "vaze" */
+  width: 100vw; 
+  overflow: hidden; 
+  padding-top: 56px; 
+  box-sizing: border-box; 
   
-  /* Ajuste para que a imagem não fique com espaço 
-     em baixo por causa da Navbar fixa */
-  padding-top: 00px; /* Altura padrão da navbar, ajuste se necessário */
-  box-sizing: border-box; /* Garante que o padding não aumente a altura */
+  /* 1. Precisamos disto para que o botão
+     '.home-cta-button' se posicione
+     em relação a este container. */
+  position: relative;
 }
 
 .home-full-image {
   width: 100%;
-  height: 100%;
-  
-  /* 'object-fit: cover' faz a imagem cobrir todo o espaço, 
-    mesmo que corte algumas partes (melhor que 'fill', que estica)
-    e sem distorcer a proporção da imagem.
-  */
+  height: calc(100vh - 56px);
   object-fit: cover;
+  object-position: top; 
+}
+
+/* 2. A MÁGICA DO POSICIONAMENTO DO BOTÃO */
+.home-cta-button {
+  /* Define que o botão terá posicionamento absoluto */
+  position: absolute;
+  
+  /* Move o botão 50% para a esquerda */
+  left: 50%;
+  
+  /* Centraliza o botão horizontalmente */
+  transform: translateX(-50%);
+  
+  /* AJUSTE AQUI: 
+     Posiciona o topo do botão a 80%
+     a partir do topo do container.
+     Aumente (ex: 85%) para descer o botão,
+     Diminua (ex: 75%) para subir o botão.
+  */
+  top: 90%;
+
+  /* (Opcional) Faz o botão ficar um pouco maior */
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 }

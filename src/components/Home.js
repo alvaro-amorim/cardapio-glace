@@ -1,20 +1,28 @@
 import React from 'react';
+// 1. Importar o Link para criar o botão
+import { Link } from 'react-router-dom';
 // Importamos o nosso CSS customizado
 import './Home.css';
 
 function Home() {
   return (
+    // O container agora precisa ser 'relative'
     <div className="home-container">
       <img
-        // 1. Caminho para a sua imagem na pasta 'public'
         src="/images/capa.png"
-        
-        // 2. Texto alternativo para acessibilidade
         alt="Capa da Confeitaria Glacê"
-        
-        // 3. A nossa nova classe de CSS para fazer a imagem preencher a tela
         className="home-full-image"
       />
+
+      {/* 2. O NOSSO NOVO BOTÃO (Call to Action) */}
+      <Link 
+        to="/cardapio" 
+        // Usamos a classe de botão que já criámos
+        // e a nossa nova classe de posicionamento
+        className="btn btn-primary home-cta-button"
+      >
+        Ver Cardápio
+      </Link>
     </div>
   );
 }
