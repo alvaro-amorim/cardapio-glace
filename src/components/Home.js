@@ -5,25 +5,16 @@ import './Home.css';
 function Home() {
   return (
     <div className="home-container">
-      {/* O Vídeo de Fundo */}
-      <video 
-        autoPlay // Faz o vídeo começar sozinho
-        loop     // Faz o vídeo repetir
-        muted    // Essencial para o autoPlay funcionar na maioria dos browsers
-        className="home-video-bg"
-      >
-        {/* O vídeo deve estar na pasta 'public'. 
-          Se o seu vídeo tiver outro nome, altere 'video-confeitaria.mp4'.
-        */}
-        <source src="/video-confeitaria.mp4" type="video/mp4" />
-        O seu browser não suporta vídeos.
-      </video>
-
-      {/* O Conteúdo Sobreposto (Mensagem) */}
-      <div className="home-content">
-        <h1>Bem-vindo à glacê Confeitaria</h1>
-        <p>Os doces que transformam o seu dia.</p>
-      </div>
+      <img
+        // 1. Caminho para a sua imagem na pasta 'public'
+        src="/images/capa.png"
+        
+        // 2. Texto alternativo para acessibilidade
+        alt="Capa da Confeitaria Glacê"
+        
+        // 3. A nossa nova classe de CSS para fazer a imagem preencher a tela
+        className="home-full-image"
+      />
     </div>
   );
 }

@@ -1,41 +1,27 @@
-/* Este é o CSS mágico para o vídeo em tela cheia */
+/*
+  CSS modificado para mostrar uma única imagem
+  em tela cheia.
+*/
 
 .home-container {
   /* Define a altura para 100% da altura da janela (viewport height) */
-  height: 100vh; 
+  height: 100vh;
   width: 100vw; /* 100% da largura da janela (viewport width) */
-  position: relative; /* Necessário para posicionar o conteúdo sobreposto */
-  display: flex; /* Usamos flexbox para centralizar o conteúdo */
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Garante que o vídeo não "vaze" */
-  text-align: center;
+  overflow: hidden; /* Garante que a imagem não "vaze" */
+  
+  /* Ajuste para que a imagem não fique com espaço 
+     em baixo por causa da Navbar fixa */
+  padding-top: 00px; /* Altura padrão da navbar, ajuste se necessário */
+  box-sizing: border-box; /* Garante que o padding não aumente a altura */
 }
 
-.home-video-bg {
-  position: absolute; /* Posição absoluta em relação ao 'home-container' */
-  top: 0;
-  left: 0;
+.home-full-image {
   width: 100%;
   height: 100%;
   
-  /* 'object-fit: cover' faz o vídeo cobrir todo o espaço, 
+  /* 'object-fit: cover' faz a imagem cobrir todo o espaço, 
     mesmo que corte algumas partes (melhor que 'fill', que estica)
+    e sem distorcer a proporção da imagem.
   */
   object-fit: cover;
-  
-  /* 'z-index: -1' joga o vídeo para TRÁS do conteúdo */
-  z-index: -1; 
-}
-
-.home-content {
-  position: relative; /* Garante que fique acima do z-index -1 */
-  z-index: 1;
-  color: white; /* Cor do texto */
-  
-  /* Alterado para usar a cor RGB da marca com 50% de opacidade */
-  background-color: rgba(var(--cor-confeitaria-vermelho-rgb), 0.5); 
-  
-  padding: 20px 40px;
-  border-radius: 10px;
 }
