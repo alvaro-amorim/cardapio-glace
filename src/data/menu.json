@@ -35,56 +35,56 @@
       "nome": "Vermelha",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "Esgotado",
-      "imagem": "/images/lata-lisa.png"
+      "imagem": "/images/lata-ls-vermelha.png"
     },
         {
       "id": "l2",
       "nome": "Verde",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "Esgotado",
-      "imagem": "/images/lata-lisa.png"
+      "imagem": "/images/lata-ls-verde.png"
     },
         {
       "id": "l3",
       "nome": "Branca",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "R$ 100,00",
-      "imagem": "/images/lata-lisa.png"
+      "imagem": "/images/lata-ls-branca.png"
     },
     {
       "id": "l4",
       "nome": "Pisca-Pisca - Feliz Natal",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "R$ 100,00",
-      "imagem": "/images/lata-lisa.png"
+      "imagem": "/images/lata-fn-verde.png"
     },    
     {
       "id": "l5",
       "nome": "Criativa - Elementos Natalinos",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "R$ 100,00",
-      "imagem": "/images/lata-natal.png"
+      "imagem": "/images/lata-fn-elementos.png"
     },    
     {
       "id": "l6",
       "nome": "Sofisticada - Feliz Natal",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "R$ 100,00",
-      "imagem": "/images/lata-natal.png"
+      "imagem": "/images/lata-fn-preta.png"
     },    
     {
       "id": "l7",
       "nome": "Kit Papai Noel",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "R$ 100,00",
-      "imagem": "/images/lata-natal.png"
+      "imagem": "/images/lata-ps-noel.png"
     },    
     {
       "id": "l8",
       "nome": "Kit Boneco de Neve",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "R$ 100,00",
-      "imagem": "/images/lata-natal.png"
+      "imagem": "/images/lata-ps-neve.png"
     }
   ],
   "tabuleiros": [
@@ -93,14 +93,14 @@
       "nome": "Tabuleiro P (10 Pedaços)",
       "descricao": "Ideal para pequenas reuniões!.",
       "preco": "R$ 100,00",
-      "imagem": "https://via.placeholder.com/300x200?text=Tabuleiro+P"
+      "imagem": "/images/tabuleiro.png"
     },
     {
       "id": "t2",
       "nome": "Tabuleiro M (20 Pedaços)",
       "descricao": "Perfeito para festas!",
       "preco": "R$ 150,00",
-      "imagem": "https://via.placeholder.com/300x200?text=Tabuleiro+M"
+      "imagem": "/images/tabuleiro.png"
     }
   ],
   "bolosETortas": [
@@ -109,21 +109,21 @@
       "nome": "Bolo de Cenoura (Fatia)",
       "descricao": "Com cobertura generosa de brigadeiro!",
       "preco": "R$ 15,00",
-      "imagem": "https://via.placeholder.com/300x200?text=Bolo+Cenoura"
+      "imagem": "/images/breve.png"
     },
     {
       "id": "c2",
       "nome": "Torta Red Velvet (Fatia)",
       "descricao": "Massa aveludada com recheio de cream cheese!",
       "preco": "R$ 15,00",
-      "imagem": "https://via.placeholder.com/300x200?text=Red+Velvet"
+      "imagem": "/images/breve.png"
     },
     {
       "id": "c3",
       "nome": "Bolo de Festa Inteiro",
       "descricao": "Encomende o seu bolo de festa! (preço por Kg).",
       "preco": "R$ 100,00",
-      "imagem": "https://via.placeholder.com/300x200?text=Bolo+Festa"
+      "imagem": "/images/bolo-festa.png"
     }
   ]
 }

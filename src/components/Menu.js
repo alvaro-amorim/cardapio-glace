@@ -19,7 +19,12 @@ function Menu() {
                 src={produto.imagem} 
                 className="card-img-top" 
                 alt={produto.nome} 
-                style={{ height: '200px', objectFit: 'cover' }} 
+                
+                // --- MODIFICAÇÃO AQUI ---
+                // Trocámos 'height: "200px"' por 'aspectRatio: "1/1"'
+                // Isto força a imagem a ser um quadrado (proporção 1:1)
+                style={{ aspectRatio: '1/1', objectFit: 'cover' }} 
+                // --- FIM DA MODIFICAÇÃO ---
               />
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{produto.nome}</h5>
@@ -28,9 +33,6 @@ function Menu() {
                   {produto.preco === "Esgotado" ? produto.preco : `Preço: ${produto.preco}`}
                 </p>
                 
-                {/* 3. O BOTÃO DE ADICIONAR */}
-                {/* 'mt-auto' empurra o botão para o fundo do card */}
-                {/* Desativamos o botão se o preço for "Sob consulta" */}
                 <button 
                   className="btn btn-primary mt-auto"
                   onClick={() => addToCart(produto)}
