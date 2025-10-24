@@ -18,14 +18,14 @@
       "id": "b3",
       "nome": "Brownie com Casquinha Recheado",
       "descricao": "Recheio cremoso de Doce de Leite com casquinha, a combinação perfeita!.",
-      "preco": "Esgotado",
+      "preco": "Em breve",
       "imagem": "/images/breve.png"
     },
     {
       "id": "b4",
       "nome": "Brownie Bites (aprox. 100g)",
       "descricao": "Saquinho com Mini-Brownies recheados com doce de leite e com casquinha , tudo em uma mordida!.",
-      "preco": "Esgotado",
+      "preco": "Em breve",
       "imagem": "/images/breve.png"
     }    
   ],
@@ -48,42 +48,42 @@
       "id": "l3",
       "nome": "Branca",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
-      "preco": "R$ 100,00",
+      "preco": "R$ 80,00",
       "imagem": "/images/lata-ls-branca.png"
     },
     {
       "id": "l4",
       "nome": "Pisca-Pisca - Feliz Natal",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
-      "preco": "R$ 100,00",
+      "preco": "R$ 80,00",
       "imagem": "/images/lata-fn-verde.png"
     },    
     {
       "id": "l5",
       "nome": "Criativa - Elementos Natalinos",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
-      "preco": "R$ 100,00",
+      "preco": "R$ 80,00",
       "imagem": "/images/lata-fn-elementos.png"
     },    
     {
       "id": "l6",
       "nome": "Sofisticada - Feliz Natal",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
-      "preco": "R$ 100,00",
+      "preco": "R$ 80,00",
       "imagem": "/images/lata-fn-preta.png"
     },    
     {
       "id": "l7",
       "nome": "Kit Papai Noel",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
-      "preco": "R$ 100,00",
+      "preco": "R$ 80,00",
       "imagem": "/images/lata-ps-noel.png"
     },    
     {
       "id": "l8",
       "nome": "Kit Boneco de Neve",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
-      "preco": "R$ 100,00",
+      "preco": "R$ 80,00",
       "imagem": "/images/lata-ps-neve.png"
     }
   ],
@@ -99,7 +99,7 @@
       "id": "t2",
       "nome": "Tabuleiro - Inteiro",
       "descricao": "Cortado como você preferir! Perfeito para festas!",
-      "preco": "R$ 190,00",
+      "preco": "R$ 160,00",
       "imagem": "/images/tabuleiro.jpg"
     }
   ],
@@ -108,14 +108,14 @@
       "id": "c1",
       "nome": "Bolo de Cenoura (Fatia)",
       "descricao": "Com cobertura generosa de brigadeiro!",
-      "preco": "R$ 15,00",
+      "preco": "Em breve",
       "imagem": "/images/breve.png"
     },
     {
       "id": "c2",
       "nome": "Torta Red Velvet (Fatia)",
       "descricao": "Massa aveludada com recheio de cream cheese!",
-      "preco": "R$ 15,00",
+      "preco": "Em breve",
       "imagem": "/images/breve.png"
     },
     {

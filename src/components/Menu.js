@@ -44,14 +44,14 @@ function Menu() {
                 <h5 className="card-title">{produto.nome}</h5>
                 <p className="card-text">{produto.descricao}</p>
                 <p className="card-text fw-bold">
-                  {produto.preco === "Esgotado" ? produto.preco : `Preço: ${produto.preco}`}
+                  {produto.preco === "Esgotado" || produto.preco === "Em breve" ? produto.preco : `Preço: ${produto.preco}`}
                 </p>
                 
                 {/* 4. O onClick agora chama a nossa nova função */}
                 <button 
                   className="btn btn-primary mt-auto"
                   onClick={() => handleAddToCartClick(produto)}
-                  disabled={produto.preco === "Esgotado"}
+                  disabled={produto.preco === "Esgotado" || produto.preco === "Em breve"}
                 >
                   Adicionar ao Carrinho
                 </button>
