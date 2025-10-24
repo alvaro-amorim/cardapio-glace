@@ -27,7 +27,7 @@ function Carrinho() {
       mensagem += `${item.quantity}x ${item.nome} (${item.preco} cada)\n`;
     });
 
-    mensagem += `\n*Total: ${calcularTotal().replace('.', ',')}€*`;
+    mensagem += `\n*Total: R$ ${calcularTotal().replace('.', ',')}*`;
 
     // Codificar a mensagem para uma URL
     const mensagemCodificada = encodeURIComponent(mensagem);

@@ -25,7 +25,7 @@ function Menu() {
                 <h5 className="card-title">{produto.nome}</h5>
                 <p className="card-text">{produto.descricao}</p>
                 <p className="card-text fw-bold">
-                  {produto.preco === "Sob consulta" ? produto.preco : `Preço: ${produto.preco}`}
+                  {produto.preco === "Esgotado" ? produto.preco : `Preço: ${produto.preco}`}
                 </p>
                 
                 {/* 3. O BOTÃO DE ADICIONAR */}
@@ -34,7 +34,7 @@ function Menu() {
                 <button 
                   className="btn btn-primary mt-auto"
                   onClick={() => addToCart(produto)}
-                  disabled={produto.preco === "Sob consulta"}
+                  disabled={produto.preco === "Esgotado"}
                 >
                   Adicionar ao Carrinho
                 </button>
