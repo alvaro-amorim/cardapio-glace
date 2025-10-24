@@ -94,7 +94,7 @@ function Carrinho() {
 
       {/* Total e Botão de Finalizar */}
       <div className="d-flex justify-content-between align-items-center">
-        <h3>Total: R$ {calcularTotal().replace('.', ',')}</h3>
+        <h3>Total: <br/>R$ {calcularTotal().replace('.', ',')}</h3>
         
         <button 
           className="btn btn-primary btn-lg"
