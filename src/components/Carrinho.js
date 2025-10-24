@@ -52,7 +52,7 @@ function Carrinho() {
   // 5. Se o carrinho tiver itens
   return (
     <div className="container mt-5 pt-5">
-      <h1 className="mb-4">Meu Carrinho</h1>
+      <h1 className="mb-4 mt-4">Meu Carrinho</h1>
       
       <ul className="list-group mb-4">
         {cartItems.map(item => (
