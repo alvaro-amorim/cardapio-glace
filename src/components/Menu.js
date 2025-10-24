@@ -1,13 +1,32 @@
 import React, { useState } from 'react';
 import menuData from '../data/menu.json';
-// 1. Importar o nosso hook
 import { useCart } from '../context/CartContext';
+// 1. Importar o nosso novo Modal
+import CustomizationModal from './CustomizationModal';
 
 function Menu() {
   const [abaAtiva, setAbaAtiva] = useState('brownies');
-  
-  // 2. Chamar o hook para ter acesso às funções do carrinho
   const { addToCart } = useCart();
+
+  // 2. Estados para controlar o Modal
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  // 3. Função para lidar com o clique do botão
+  const handleAddToCartClick = (produto) => {
+    // 3a. Verifica se o ID é de 'brownieNaLata' (l) ou 'tabuleiros' (t)
+    const isCustomizable = produto.id.startsWith('l') || produto.id.startsWith('t');
+
+    if (isCustomizable) {
+      // 3b. Se for personalizável, ABRE O MODAL
+      setSelectedProduct(produto);
+      setShowModal(true);
+    } else {
+      // 3c. Se for um item normal (brownie unitário, etc.), adiciona direto
+      addToCart(produto);
+    }
+  };
+
 
   const renderizarProdutos = (produtos) => {
     return (
@@ -19,12 +38,7 @@ function Menu() {
                 src={produto.imagem} 
                 className="card-img-top" 
                 alt={produto.nome} 
-                
-                // --- MODIFICAÇÃO AQUI ---
-                // Trocámos 'height: "200px"' por 'aspectRatio: "1/1"'
-                // Isto força a imagem a ser um quadrado (proporção 1:1)
                 style={{ aspectRatio: '1/1', objectFit: 'cover' }} 
-                // --- FIM DA MODIFICAÇÃO ---
               />
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{produto.nome}</h5>
@@ -33,9 +47,10 @@ function Menu() {
                   {produto.preco === "Esgotado" ? produto.preco : `Preço: ${produto.preco}`}
                 </p>
                 
+                {/* 4. O onClick agora chama a nossa nova função */}
                 <button 
                   className="btn btn-primary mt-auto"
-                  onClick={() => addToCart(produto)}
+                  onClick={() => handleAddToCartClick(produto)}
                   disabled={produto.preco === "Esgotado"}
                 >
                   Adicionar ao Carrinho
@@ -49,12 +64,12 @@ function Menu() {
   };
 
   return (
-    <div className="container mt-5 pt-5">
+    // 5. Adicionamos 'position-relative' para o Modal funcionar bem
+    <div className="container mt-5 pt-5 position-relative">
       <h1 className="text-center mb-4 mt-5">Nosso Cardápio</h1>
 
       {/* --- Navegação das Abas (Sem alteração) --- */}
       <ul className="nav nav-tabs" id="myTab" role="tablist">
-        {/* ... (código das abas 'li' - sem alteração) ... */}
         <li className="nav-item" role="presentation">
           <button
             className={`nav-link ${abaAtiva === 'brownies' ? 'active' : ''}`}
@@ -93,7 +108,7 @@ function Menu() {
         </li>
       </ul>
 
-      {/* --- Conteúdo das Abas (Sem alteração na lógica, só no conteúdo dos cards) --- */}
+      {/* --- Conteúdo das Abas (Sem alteração) --- */}
       <div className="tab-content" id="myTabContent">
         <div 
           className={`tab-pane fade p-3 ${abaAtiva === 'brownies' ? 'show active' : ''}`} 
@@ -124,6 +139,14 @@ function Menu() {
           {renderizarProdutos(menuData.bolosETortas)}
         </div>
       </div>
+
+      {/* 6. Adicionamos o Modal "invisível" à página */}
+      {/* Ele só vai aparecer quando 'showModal' for 'true' */}
+      <CustomizationModal
+        product={selectedProduct}
+        show={showModal}
+        handleClose={() => setShowModal(false)}
+      />
     </div>
   );
 }

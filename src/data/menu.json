@@ -90,17 +90,17 @@
   "tabuleiros": [
     {
       "id": "t1",
-      "nome": "Tabuleiro P (10 Pedaços)",
-      "descricao": "Ideal para pequenas reuniões!.",
+      "nome": "Tabuleiro - Metade",
+      "descricao": "Cortado como você preferir! Ideal para pequenas reuniões!.",
       "preco": "R$ 100,00",
-      "imagem": "/images/tabuleiro.png"
+      "imagem": "/images/tabuleiro.jpg"
     },
     {
       "id": "t2",
-      "nome": "Tabuleiro M (20 Pedaços)",
-      "descricao": "Perfeito para festas!",
-      "preco": "R$ 150,00",
-      "imagem": "/images/tabuleiro.png"
+      "nome": "Tabuleiro - Inteiro",
+      "descricao": "Cortado como você preferir! Perfeito para festas!",
+      "preco": "R$ 190,00",
+      "imagem": "/images/tabuleiro.jpg"
     }
   ],
   "bolosETortas": [
