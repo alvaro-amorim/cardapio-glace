@@ -14,13 +14,13 @@ function Home() {
         {/* (min-width: 768px) é um breakpoint padrão (telas 'md' do Bootstrap) */}
         <source 
           srcSet="/images/capa-desktop.png" 
-          media="(min-width: 501px)" 
+          media="(min-width: 768px)" 
         />
         
         {/* 2. Define a imagem para telas PEQUENAS (mobile) */}
         <source 
           srcSet="/images/capa.png" 
-          media="(max-width: 500px)" 
+          media="(max-width: 767px)" 
         />
         
         {/* 3. A tag <img> é o fallback (caso o browser seja antigo)
