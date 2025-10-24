@@ -4,42 +4,84 @@
       "id": "b1",
       "nome": "Brownie Tradicional",
       "descricao": "Nosso Brownie Clássico, feito com os melhores ingredientes!.",
-      "preco": "R$ 7,00",
+      "preco": "R$ 7,50",
       "imagem": "/images/brownie-tradicional.png"
     },
     {
       "id": "b2",
       "nome": "Brownie com Casquinha",
       "descricao": "A casquinha de chocolate fininha que envolve o Brownie deliciosamente!",
-      "preco": "R$ 8,00",
+      "preco": "R$ 8,50",
       "imagem": "/images/brownie-casquinha.png"
     },
     {
       "id": "b3",
       "nome": "Brownie com Casquinha Recheado",
       "descricao": "Recheio cremoso de Doce de Leite com casquinha, a combinação perfeita!.",
-      "preco": "R$ 9,50",
-      "imagem": "/images/brownie-casquinha.png"
+      "preco": "Esgotado",
+      "imagem": "/images/breve.png"
     },
     {
       "id": "b4",
       "nome": "Brownie Bites (aprox. 100g)",
       "descricao": "Saquinho com Mini-Brownies recheados com doce de leite e com casquinha , tudo em uma mordida!.",
-      "preco": "R$ 20,00",
-      "imagem": "/images/brownie-bites.png"
+      "preco": "Esgotado",
+      "imagem": "/images/breve.png"
     }    
   ],
   "brownieNaLata": [
     {
       "id": "l1",
-      "nome": "Lata de Brownie (Lisa)",
+      "nome": "Vermelha",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "Esgotado",
       "imagem": "/images/lata-lisa.png"
     },
-    {
+        {
       "id": "l2",
-      "nome": "Lata de Brownie (Natalina)",
+      "nome": "Verde",
+      "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
+      "preco": "Esgotado",
+      "imagem": "/images/lata-lisa.png"
+    },
+        {
+      "id": "l3",
+      "nome": "Branca",
+      "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
+      "preco": "R$ 100,00",
+      "imagem": "/images/lata-lisa.png"
+    },
+    {
+      "id": "l4",
+      "nome": "Pisca-Pisca - Feliz Natal",
+      "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
+      "preco": "R$ 100,00",
+      "imagem": "/images/lata-lisa.png"
+    },    
+    {
+      "id": "l5",
+      "nome": "Criativa - Elementos Natalinos",
+      "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
+      "preco": "R$ 100,00",
+      "imagem": "/images/lata-natal.png"
+    },    
+    {
+      "id": "l6",
+      "nome": "Sofisticada - Feliz Natal",
+      "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
+      "preco": "R$ 100,00",
+      "imagem": "/images/lata-natal.png"
+    },    
+    {
+      "id": "l7",
+      "nome": "Kit Papai Noel",
+      "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
+      "preco": "R$ 100,00",
+      "imagem": "/images/lata-natal.png"
+    },    
+    {
+      "id": "l8",
+      "nome": "Kit Boneco de Neve",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "R$ 100,00",
       "imagem": "/images/lata-natal.png"
@@ -57,7 +99,7 @@
       "id": "t2",
       "nome": "Tabuleiro M (20 Pedaços)",
       "descricao": "Perfeito para festas!",
-      "preco": "R$ 180,00",
+      "preco": "R$ 150,00",
       "imagem": "https://via.placeholder.com/300x200?text=Tabuleiro+M"
     }
   ],
