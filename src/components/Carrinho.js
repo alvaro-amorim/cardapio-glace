@@ -97,7 +97,7 @@ function Carrinho() {
         <h3>Total: <br/>R$ {calcularTotal().replace('.', ',')}</h3>
         
         <button 
-          className="btn btn-primary btn-lg"
+          className="btn btn-primary btn-md"
           onClick={handleFinalizarCompra}
         >
           Finalizar Compra no WhatsApp
