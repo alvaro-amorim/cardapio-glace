@@ -12,6 +12,13 @@ body {
   
   /* Se quiser o fundo creme, descomente a linha abaixo */
   /* background-color: var(--cor-confeitaria-creme); */
+
+  /* --- MODIFICAÇÃO AQUI --- */
+  /* Impede que o utilizador selecione texto ou veja o cursor de digitação */
+  user-select: none;
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none;    /* Para Firefox */
+  -ms-user-select: none;     /* Para Internet Explorer */
 }
 
 /* Aplicamos "Beth Ellen" aos títulos principais */

@@ -11,7 +11,7 @@ function Carrinho() {
   // Precisamos convertê-la para número)
   const calcularTotal = () => {
     return cartItems.reduce((total, item) => {
-      // Converte "5,00€" para 5.00
+      // Converte "R$ 5,00" para 5.00
       const precoNumerico = parseFloat(item.preco.replace('R$', '').replace(',', '.'));
       return total + (precoNumerico * item.quantity);
     }, 0).toFixed(2); // .toFixed(2) para formatar como "XX.XX"
@@ -21,7 +21,7 @@ function Carrinho() {
   const handleFinalizarCompra = () => {
     const numeroWhatsApp = '5532984860949'; 
 
-    let mensagem = 'Olá! Gostaria de fazer o seguinte pedido:\n\n';
+    let mensagem = 'Olá Glacê! Gostaria de fazer o seguinte pedido:\n\n';
     
     cartItems.forEach(item => {
       mensagem += `${item.quantity}x ${item.nome} (${item.preco} cada)\n`;
