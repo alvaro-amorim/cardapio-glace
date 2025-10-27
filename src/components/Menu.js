@@ -29,9 +29,36 @@ function Menu() {
 
 
   const renderizarProdutos = (produtos) => {
+
+    // --- INÍCIO DA NOVA LÓGICA DE ORDENAÇÃO ---
+
+    // 1. Função auxiliar para verificar se o item está indisponível
+    const isUnavailable = (produto) => 
+      produto.preco === "Esgotado" || produto.preco === "Em breve";
+
+    // 2. Criamos uma CÓPIA ordenada do array
+    //    Usamos [...produtos] para criar a cópia e não modificar o original
+    const sortedProdutos = [...produtos].sort((a, b) => {
+      const aIsUnavailable = isUnavailable(a);
+      const bIsUnavailable = isUnavailable(b);
+
+      // Se 'a' está indisponível e 'b' não, 'a' vai para o fim (retorna 1)
+      if (aIsUnavailable && !bIsUnavailable) return 1;
+      
+      // Se 'a' está disponível e 'b' não, 'a' vai para o início (retorna -1)
+      if (!aIsUnavailable && bIsUnavailable) return -1;
+      
+      // Se ambos são iguais (ambos disponíveis ou indisponíveis), mantém a ordem
+      return 0;
+    });
+    
+    // --- FIM DA NOVA LÓGICA DE ORDENAÇÃO ---
+
+
     return (
       <div className="row">
-        {produtos.map((produto) => (
+        {/* 3. Mapeamos o array JÁ ORDENADO (sortedProdutos) */}
+        {sortedProdutos.map((produto) => (
           <div key={produto.id} className="col-lg-4 col-md-6 col-sm-12 mb-4">
             <div className="card h-100">
               <img 

@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css'; 
 
-// 1. Importar a biblioteca de Toast
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -13,9 +12,16 @@ import Menu from './components/Menu';
 import Carrinho from './components/Carrinho'; 
 import Footer from './components/Footer';
 
+// 1. Importar o nosso novo componente
+import ScrollToTop from './components/ScrollToTop';
+
 function App() {
   return (
     <div className="App">
+      {/* 2. Adicionar o componente aqui. 
+          Ele vai "ouvir" as mudanças nas <Routes> abaixo */}
+      <ScrollToTop />
+      
       <Navbar />
 
       <Routes>
@@ -26,14 +32,9 @@ function App() {
       
       <Footer />
       
-      {/* 2. Adicionar o Contentor de Notificações.
-          Ele fica aqui mas é "invisível" até ser chamado.
-          Usamos o tema "colored" para que a cor da notificação
-          seja sólida (vermelha, no nosso caso).
-      */}
       <ToastContainer 
-        position="bottom-right" // Posição
-        autoClose={5000}         // Fecha em 5 segundos
+        position="bottom-right"
+        autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -41,7 +42,7 @@ function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="colored"          // TEMA IMPORTANTE
+        theme="colored"
       />
     </div>
   );
