@@ -11,7 +11,7 @@
   /* 2. Usa Flexbox para organizar os "filhos" (Navbar, Rotas, Footer) */
   display: flex;
   flex-direction: column;
-  background-color: #fcfaf1;
+  /* A linha de background-color foi removida daqui */
 }
 
 /* O 'mt-auto' (margin-top: auto) que colocámos
@@ -19,3 +19,171 @@
   vai automaticamente "empurrar" o footer
   para o fundo deste contentor flex de 100vh.
 */
+/* 1. Definir a nossa paleta de marca personalizada (boas práticas) */
+:root {
+  --cor-confeitaria-vermelho: #a20100;
+  --cor-confeitaria-creme: #fcfaf1;
+  --cor-confeitaria-vermelho-rgb: 162, 1, 0;
+}
+
+/* 2. (Opcional) Cor de fundo do site */
+body {
+  /* Aplicamos "Montserrat" como a fonte principal do site */
+  font-family: 'Montserrat', sans-serif;
+  
+  /* --- MODIFICAÇÃO AQUI --- */
+  /* A linha foi descomentada para ativar a cor de fundo */
+  background-color: var(--cor-confeitaria-creme); /* */
+
+  /* --- MODIFICAÇÃO AQUI --- */
+  /* Impede que o utilizador selecione texto ou veja o cursor de digitação */
+  user-select: none;
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none;    /* Para Firefox */
+  -ms-user-select: none;     /* Para Internet Explorer */
+}
+
+/* Aplicamos "Beth Ellen" aos títulos principais */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Beth Ellen', cursive;
+}
+
+
+/* --- MÉTODO DIRETO (MAIS FORTE) --- */
+/* Vamos sobrescrever as classes de botão diretamente. */
+
+.btn-primary {
+  background-color: var(--cor-confeitaria-vermelho);
+  border-color: var(--cor-confeitaria-vermelho);
+  /* Cor do texto (caso o Bootstrap se confunda) */
+  color: #fcfaf1; 
+}
+
+/* Cor do botão ao passar o rato (hover) */
+.btn-primary:hover {
+  background-color: #8a0100; /* Um tom de vermelho um pouco mais escuro */
+  border-color: #8a0100;
+  color: #fcfaf1;
+}
+
+/* Cor do botão quando está ativo/clicado (importante!) */
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary.active {
+  background-color: #8a0100;
+  border-color: #8a0100;
+  color: #fcfaf1;
+  /* O box-shadow usa a nossa cor RGB para manter a consistência */
+  box-shadow: 0 0 0 0.25rem rgba(var(--cor-confeitaria-vermelho-rgb), 0.5) !important;
+}
+
+
+/* --- ESTILOS DAS ABAS DO MENU (TABS) --- */
+
+.nav-tabs .nav-link {
+  /* Usamos a cor vermelha da marca (pode ajustar a opacidade se quiser) */
+  color: var(--cor-confeitaria-vermelho);
+  /* Deixamos um pouco opaco para diferenciar do ativo */
+  opacity: 0.7; 
+  border-color: transparent; /* Removemos a borda padrão */
+}
+
+/* 2. ESTILO DO LINK (ATIVO) - O que está selecionado */
+.nav-tabs .nav-link.active {
+  color: var(--cor-confeitaria-vermelho);
+  border-color: var(--cor-confeitaria-vermelho) var(--cor-confeitaria-vermelho) #fcfaf1;
+  font-weight: bold; /* Mantém o negrito */
+  opacity: 1; /* Garante que o ativo tem 100% da cor */
+}
+
+/* 3. ESTILO HOVER (Quando o rato passa por cima) */
+.nav-tabs .nav-link:hover {
+  border-color: var(--cor-confeitaria-vermelho);
+  color: var(--cor-confeitaria-vermelho);
+  opacity: 1; /* Garante 100% da cor no hover */
+}
+/* --- ESTILOS DA NOVA NAVBAR BRANCA --- */
+
+.navbar-confeitaria {
+  /* Adiciona a linha de borda inferior na cor da marca */
+  border-bottom: 2px solid var(--cor-confeitaria-vermelho);
+
+  /* (Opcional) Uma sombra suave para "elevar" a navbar */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* Altera os links de texto (ex: "Início", "Cardápio") 
+  para a cor da marca e negrito.
+*/
+.navbar-confeitaria .nav-link {
+  color: var(--cor-confeitaria-vermelho) !important; /* '!important' força a sobrescrita do Bootstrap */
+  font-weight: bold;
+}
+
+/* Muda a cor do link ao passar o rato (hover) */
+.navbar-confeitaria .nav-link:hover {
+  color: #8a0100 !important; /* O tom de vermelho mais escuro */
+}
+
+/* Aplicamos a fonte "Beth Ellen" à marca da Navbar */
+.navbar-confeitaria .navbar-brand {
+  font-family: 'Beth Ellen', cursive;
+  color: var(--cor-confeitaria-vermelho) !important;
+  font-weight: bold;
+}
+
+/* --- ESTILOS DOS BOTÕES DESATIVADOS --- */
+/* Isto corrige o botão azul 'Sob consulta' */
+
+.btn-primary:disabled,
+.btn-primary.disabled {
+  /* Usamos a cor base vermelha */
+  background-color: var(--cor-confeitaria-vermelho);
+  border-color: var(--cor-confeitaria-vermelho);
+  
+  /* E aplicamos a opacidade padrão do Bootstrap (0.65)
+     para lhe dar a aparência de "opaco/desativado" */
+  opacity: 0.65;
+}
+
+
+/* --- ESTILOS DO FOOTER (MODIFICADO) --- */
+
+.footer-confeitaria {
+  /* NOVO: Fundo vermelho da marca */
+  background-color: var(--cor-confeitaria-vermelho);
+  
+  /* Removemos a borda e sombra que não são mais necessárias 
+     no fundo vermelho */
+}
+
+/* Estilo dos ícones de rede social */
+.social-icon {
+  /* Tamanho dos ícones */
+  font-size: 2rem; 
+  
+  /* NOVO: Cor dos ícones */
+  color: #fcfaf1;
+  
+  /* Espaçamento entre os ícones */
+  margin: 0 10px;
+  
+  /* Transição suave para o hover */
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Cor dos ícones ao passar o rato (leve fade) */
+.social-icon:hover {
+  opacity: 0.8;
+}
+
+/* NOVA CLASSE para o texto do copyright */
+.footer-text {
+  color: #fcfaf1;
+}
+
+/* NOVA CLASSE ADICIONAL para o copyright "bem pequeno" */
+.footer-copyright {
+  font-size: 0.8rem; /* Deixa o texto ~20% menor que o padrão */
+  opacity: 0.9; /* Um pouco mais suave */
+}

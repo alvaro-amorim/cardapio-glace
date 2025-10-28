@@ -10,8 +10,9 @@ body {
   /* Aplicamos "Montserrat" como a fonte principal do site */
   font-family: 'Montserrat', sans-serif;
   
-  /* Se quiser o fundo creme, descomente a linha abaixo */
-  /* background-color: var(--cor-confeitaria-creme); */
+  /* --- MODIFICAÇÃO AQUI --- */
+  /* A linha foi descomentada para ativar a cor de fundo */
+  background-color: var(--cor-confeitaria-creme); /* */
 
   /* --- MODIFICAÇÃO AQUI --- */
   /* Impede que o utilizador selecione texto ou veja o cursor de digitação */
@@ -87,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 2px solid var(--cor-confeitaria-vermelho);
 
   /* (Opcional) Uma sombra suave para "elevar" a navbar */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
 }
 
 /* Altera os links de texto (ex: "Início", "Cardápio") 

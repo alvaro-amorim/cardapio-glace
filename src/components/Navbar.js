@@ -44,7 +44,7 @@ function Navbar() {
   return (
     // 7. Adicionar a nossa referência 'ref' ao 'nav'
     <nav 
-      className="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-confeitaria" 
+      className="navbar navbar-expand-lg fixed-top navbar-confeitaria" 
       ref={navbarRef}
     >
       <div className="container">

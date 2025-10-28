@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-// 1. Importar o Bootstrap CSS (primeiro)
+/* --- ESTA É A PARTE MAIS IMPORTANTE --- */
+/* A ORDEM TEM DE SER ESTA: */
+
+// 1. O CSS do Bootstrap (Base)
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// 2. (NOVA LINHA) Importar o Bootstrap JavaScript (Bundle)
-// Isto adiciona a lógica para Toggles, Dropdowns, Modals, etc.
+// 2. O JavaScript do Bootstrap (para o Menu Toggle)
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-// 3. Importar o SEU CSS (por último)
-import './index.css'; 
+// 3. O SEU CSS (Com as suas cores e fontes)
+//    Se esta linha faltar, o seu site fica sem cores.
+
+/* --- FIM DA PARTE IMPORTANTE --- */
 
 import { BrowserRouter } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
