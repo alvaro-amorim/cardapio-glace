@@ -4,14 +4,14 @@
       "id": "b1",
       "nome": "Brownie Tradicional",
       "descricao": "Nosso Brownie Clássico, feito com os melhores ingredientes!.",
-      "preco": "R$ 7,50",
+      "preco": "R$ 7,0",
       "imagem": "/images/brownie-tradicional.png"
     },
     {
       "id": "b2",
       "nome": "Brownie com Casquinha",
       "descricao": "A casquinha de chocolate fininha que envolve o Brownie deliciosamente!",
-      "preco": "R$ 8,50",
+      "preco": "R$ 8,00",
       "imagem": "/images/brownie-casquinha.png"
     },
     {
