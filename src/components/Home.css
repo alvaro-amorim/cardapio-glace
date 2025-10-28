@@ -8,6 +8,7 @@
   overflow: hidden; 
   padding-top: 56px; 
   box-sizing: border-box; 
+  color: #fcfaf1;
   
   /* 1. Precisamos disto para que o botão
      '.home-cta-button' se posicione

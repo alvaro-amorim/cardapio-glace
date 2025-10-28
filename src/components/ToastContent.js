@@ -21,7 +21,7 @@ function ToastContent({ closeToast }) {
 
   return (
     <div>
-      <h5 style={{ fontFamily: "'Montserrat', sans-serif", color: '#fff' }}>
+      <h5 style={{ fontFamily: "'Montserrat', sans-serif", color: '#fcfaf1' }}>
         Item adicionado ao carrinho!
       </h5>
       <div className="mt-3">

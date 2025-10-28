@@ -1,7 +1,7 @@
 /* 1. Definir a nossa paleta de marca personalizada (boas práticas) */
 :root {
   --cor-confeitaria-vermelho: #a20100;
-  --cor-confeitaria-creme: #fff6d4;
+  --cor-confeitaria-creme: #fcfaf1;
   --cor-confeitaria-vermelho-rgb: 162, 1, 0;
 }
 
@@ -34,14 +34,14 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--cor-confeitaria-vermelho);
   border-color: var(--cor-confeitaria-vermelho);
   /* Cor do texto (caso o Bootstrap se confunda) */
-  color: #fff; 
+  color: #fcfaf1; 
 }
 
 /* Cor do botão ao passar o rato (hover) */
 .btn-primary:hover {
   background-color: #8a0100; /* Um tom de vermelho um pouco mais escuro */
   border-color: #8a0100;
-  color: #fff;
+  color: #fcfaf1;
 }
 
 /* Cor do botão quando está ativo/clicado (importante!) */
@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary.active {
   background-color: #8a0100;
   border-color: #8a0100;
-  color: #fff;
+  color: #fcfaf1;
   /* O box-shadow usa a nossa cor RGB para manter a consistência */
   box-shadow: 0 0 0 0.25rem rgba(var(--cor-confeitaria-vermelho-rgb), 0.5) !important;
 }
@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 /* 2. ESTILO DO LINK (ATIVO) - O que está selecionado */
 .nav-tabs .nav-link.active {
   color: var(--cor-confeitaria-vermelho);
-  border-color: var(--cor-confeitaria-vermelho) var(--cor-confeitaria-vermelho) #fff;
+  border-color: var(--cor-confeitaria-vermelho) var(--cor-confeitaria-vermelho) #fcfaf1;
   font-weight: bold; /* Mantém o negrito */
   opacity: 1; /* Garante que o ativo tem 100% da cor */
 }
@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 2px solid var(--cor-confeitaria-vermelho);
 
   /* (Opcional) Uma sombra suave para "elevar" a navbar */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 /* Altera os links de texto (ex: "Início", "Cardápio") 

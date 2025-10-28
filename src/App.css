@@ -11,6 +11,7 @@
   /* 2. Usa Flexbox para organizar os "filhos" (Navbar, Rotas, Footer) */
   display: flex;
   flex-direction: column;
+  background-color: #fcfaf1;
 }
 
 /* O 'mt-auto' (margin-top: auto) que colocámos
