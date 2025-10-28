@@ -10,11 +10,10 @@ body {
   /* Aplicamos "Montserrat" como a fonte principal do site */
   font-family: 'Montserrat', sans-serif;
   
-  /* --- MODIFICAÇÃO AQUI --- */
-  /* A linha foi descomentada para ativar a cor de fundo */
+  /* --- CORREÇÃO AQUI --- */
+  /* A linha foi descomentada e agora vai funcionar */
   background-color: var(--cor-confeitaria-creme); /* */
 
-  /* --- MODIFICAÇÃO AQUI --- */
   /* Impede que o utilizador selecione texto ou veja o cursor de digitação */
   user-select: none;
   -webkit-user-select: none; /* Para Safari */
@@ -89,6 +88,8 @@ h1, h2, h3, h4, h5, h6 {
 
   /* (Opcional) Uma sombra suave para "elevar" a navbar */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  color: #fcfaf1;
+  background-color: #fcfaf1;
 }
 
 /* Altera os links de texto (ex: "Início", "Cardápio") 

@@ -110,6 +110,8 @@ h1, h2, h3, h4, h5, h6 {
 
   /* (Opcional) Uma sombra suave para "elevar" a navbar */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  color: #fcfaf1;
+  background-color: #fcfaf1;
 }
 
 /* Altera os links de texto (ex: "Início", "Cardápio") 
@@ -186,4 +188,26 @@ h1, h2, h3, h4, h5, h6 {
 .footer-copyright {
   font-size: 0.8rem; /* Deixa o texto ~20% menor que o padrão */
   opacity: 0.9; /* Um pouco mais suave */
+}
+
+/* --- ESTILOS DO BOTÃO TOGGLE (SANDUICHE) --- */
+
+/* 1. Mudar a cor da borda do botão (quando focado/clicado) */
+.navbar-toggler {
+  /* Usa a nossa cor vermelha para a borda do "focus" */
+  border-color: rgba(var(--cor-confeitaria-vermelho-rgb), 0.5); 
+}
+
+.navbar-toggler:focus {
+  /* Também usa a nossa cor vermelha para o "brilho" (box-shadow) do focus */
+  box-shadow: 0 0 0 0.25rem rgba(var(--cor-confeitaria-vermelho-rgb), 0.5);
+}
+
+/* 2. Mudar a cor das 3 linhas (o ícone) */
+.navbar-toggler-icon {
+  /* O 'background-image' é um SVG. Nós o recriamos aqui,
+     trocando a cor do 'stroke' (linha) pela sua cor #a20100.
+     (%23a20100 é o código "URL-safe" para #a20100)
+  */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23a20100' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
