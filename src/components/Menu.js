@@ -90,7 +90,7 @@ function Menu() {
           let textoEstoque = null;
           // Mostra o texto só se for controlado pelo estoque e tiver 
           if (estoqueAtual !== null && estoqueAtual > 0) {
-            textoEstoque = `(Restam ${estoqueAtual} unidades)`;
+            textoEstoque = `Resta(m) ${estoqueAtual} unidade(s)`;
           }
 
           return (
