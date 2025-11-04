@@ -34,57 +34,65 @@
       "id": "l1",
       "nome": "Vermelha",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
-      "preco": "Esgotado",
-      "imagem": "/images/lata-ls-vermelha.png"
+      "preco": "R$ 80,00",
+      "imagem": "/images/lata-ls-vermelha.png",
+      "sheet_id": "11"
     },
-        {
+    {
       "id": "l2",
       "nome": "Verde",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
-      "preco": "Esgotado",
-      "imagem": "/images/lata-ls-verde.png"
+      "preco": "R$ 80,00",
+      "imagem": "/images/lata-ls-verde.png",
+      "sheet_id": "12"
     },
-        {
+    {
       "id": "l3",
       "nome": "Branca",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "R$ 80,00",
-      "imagem": "/images/lata-ls-branca.png"
+      "imagem": "/images/lata-ls-branca.png",
+      "sheet_id": "13"
     },
     {
       "id": "l4",
       "nome": "Pisca-Pisca - Feliz Natal",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "R$ 80,00",
-      "imagem": "/images/lata-fn-verde.png"
+      "imagem": "/images/lata-fn-verde.png",
+      "sheet_id": "14"
     },    
     {
       "id": "l5",
       "nome": "Criativa - Elementos Natalinos",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "R$ 80,00",
-      "imagem": "/images/lata-fn-elementos.png"
+      "imagem": "/images/lata-fn-elementos.png",
+      "sheet_id": "15"
     },    
     {
       "id": "l6",
       "nome": "Sofisticada - Feliz Natal",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "R$ 80,00",
-      "imagem": "/images/lata-fn-preta.png"
+      "imagem": "/images/lata-fn-preta.png",
+      "sheet_id": "16"
     },    
     {
       "id": "l7",
       "nome": "Kit Papai Noel",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "R$ 80,00",
-      "imagem": "/images/lata-ps-noel.png"
+      "imagem": "/images/lata-ps-noel.png",
+      "sheet_id": "17"
     },    
     {
       "id": "l8",
       "nome": "Kit Boneco de Neve",
       "descricao": "Escolha o seu tipo de Brownie preferido! (aprox. 500g).",
       "preco": "R$ 80,00",
-      "imagem": "/images/lata-ps-neve.png"
+      "imagem": "/images/lata-ps-neve.png",
+      "sheet_id": "18"
     }
   ],
   "tabuleiros": [

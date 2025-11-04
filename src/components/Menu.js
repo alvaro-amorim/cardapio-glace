@@ -1,101 +1,147 @@
-import React, { useState } from 'react';
+/*
+ * CÓDIGO FINAL - MENU.JS
+ * Lógica de preço simplificada!
+ */
+import React, { useState, useEffect } from 'react';
 import menuData from '../data/menu.json';
 import { useCart } from '../context/CartContext';
-// 1. Importar o nosso novo Modal
 import CustomizationModal from './CustomizationModal';
+
+// Esta é a sua URL, que está funcionando
+const urlApiEstoque = 'https://script.google.com/macros/s/AKfycbwx0zIkE5knHxNNw0TgsfqzKHO-rcVvL9uerXsKhF8GZ21BJoKsMMFDQoNyQ8MCcyDW/exec';
 
 function Menu() {
   const [abaAtiva, setAbaAtiva] = useState('brownies');
   const { addToCart } = useCart();
-
-  // 2. Estados para controlar o Modal
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [estoques, setEstoques] = useState(null);
 
-  // 3. Função para lidar com o clique do botão
+  useEffect(() => {
+    async function fetchEstoques() {
+      try {
+        const response = await fetch(urlApiEstoque);
+        if (!response.ok) {
+          throw new Error(`Falha na rede: ${response.statusText}`);
+        }
+        const data = await response.json();
+        console.log('Dados de estoque recebidos da planilha:', data);
+        setEstoques(data);
+      } catch (error) {
+        console.error('ERRO AO BUSCAR ESTOQUE DA PLANILHA:', error);
+        setEstoques({}); 
+      }
+    }
+    
+    fetchEstoques();
+  }, []);
+
   const handleAddToCartClick = (produto) => {
-    // 3a. Verifica se o ID é de 'brownieNaLata' (l) ou 'tabuleiros' (t)
     const isCustomizable = produto.id.startsWith('l') || produto.id.startsWith('t');
-
     if (isCustomizable) {
-      // 3b. Se for personalizável, ABRE O MODAL
       setSelectedProduct(produto);
       setShowModal(true);
     } else {
-      // 3c. Se for um item normal (brownie unitário, etc.), adiciona direto
       addToCart(produto);
     }
   };
 
-
   const renderizarProdutos = (produtos) => {
 
-    // --- INÍCIO DA NOVA LÓGICA DE ORDENAÇÃO ---
+    const isUnavailable = (produto) => {
+      // Se o preço for "Em breve", está indisponível
+      if (produto.preco === "Em breve") return true;
+      
+      // Se os estoques não carregaram, não está indisponível
+      if (estoques === null) return false; 
+      
+      // Usamos 'produto.id' (ex: "l1") para checar
+      const idDaPlanilha = produto.id; 
+      
+      // Se o produto não é controlado pela planilha (ex: brownie b1), 
+      // ele não tem 'id' no objeto 'estoques'. Vamos checar se o ID existe lá.
+      if (!estoques.hasOwnProperty(idDaPlanilha)) {
+        return false; // Não é controlado pelo estoque, então está disponível
+      }
 
-    // 1. Função auxiliar para verificar se o item está indisponível
-    const isUnavailable = (produto) => 
-      produto.preco === "Esgotado" || produto.preco === "Em breve";
+      // É controlado pelo estoque. Checa se o valor é maior que 0.
+      const estoqueValor = estoques[idDaPlanilha]; 
+      const estaIndisponivel = !(estoqueValor > 0);
+      
+      return estaIndisponivel;
+    };
 
-    // 2. Criamos uma CÓPIA ordenada do array
-    //    Usamos [...produtos] para criar a cópia e não modificar o original
     const sortedProdutos = [...produtos].sort((a, b) => {
       const aIsUnavailable = isUnavailable(a);
-      const bIsUnavailable = isUnavailable(b);
+      const bIsUnavailable = isUnavailable(b); 
 
-      // Se 'a' está indisponível e 'b' não, 'a' vai para o fim (retorna 1)
       if (aIsUnavailable && !bIsUnavailable) return 1;
-      
-      // Se 'a' está disponível e 'b' não, 'a' vai para o início (retorna -1)
       if (!aIsUnavailable && bIsUnavailable) return -1;
-      
-      // Se ambos são iguais (ambos disponíveis ou indisponíveis), mantém a ordem
       return 0;
     });
     
-    // --- FIM DA NOVA LÓGICA DE ORDENAÇÃO ---
-
-
     return (
       <div className="row">
-        {/* 3. Mapeamos o array JÁ ORDENADO (sortedProdutos) */}
-        {sortedProdutos.map((produto) => (
-          <div key={produto.id} className="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div className="card h-100">
-              <img 
-                src={produto.imagem} 
-                className="card-img-top" 
-                alt={produto.nome} 
-                style={{ aspectRatio: '1/1', objectFit: 'cover' }} 
-              />
-              <div className="card-body d-flex flex-column">
-                <h5 className="card-title">{produto.nome}</h5>
-                <p className="card-text">{produto.descricao}</p>
-                <p className="card-text fw-bold">
-                  {produto.preco === "Esgotado" || produto.preco === "Em breve" ? produto.preco : `Preço: ${produto.preco}`}
-                </p>
-                
-                {/* 4. O onClick agora chama a nossa nova função */}
-                <button 
-                  className="btn btn-primary mt-auto"
-                  onClick={() => handleAddToCartClick(produto)}
-                  disabled={produto.preco === "Esgotado" || produto.preco === "Em breve"}
-                >
-                  Adicionar ao Carrinho
-                </button>
+        {sortedProdutos.map((produto) => {
+          
+          const produtoIndisponivel = isUnavailable(produto);
+          const estoqueAtual = (estoques && estoques.hasOwnProperty(produto.id)) ? estoques[produto.id] : null;
+
+          let textoEstoque = null;
+          // Mostra o texto só se for controlado pelo estoque e tiver 
+          if (estoqueAtual !== null && estoqueAtual > 0) {
+            textoEstoque = `(Restam ${estoqueAtual} unidades)`;
+          }
+
+          return (
+            <div key={produto.id} className="col-lg-4 col-md-6 col-sm-12 mb-4">
+              <div className="card h-100">
+                <img 
+                  src={produto.imagem} 
+                  className="card-img-top" 
+                  alt={produto.nome} 
+                  style={{ aspectRatio: '1/1', objectFit: 'cover' }} 
+                />
+                <div className="card-body d-flex flex-column">
+                  <h5 className="card-title">{produto.nome}</h5>
+                  <p className="card-text">{produto.descricao}</p>
+                  
+                  {/* --- LÓGICA DE PREÇO SIMPLIFICADA --- */}
+                  <p className="card-text fw-bold">
+                    {produtoIndisponivel
+                      ? (produto.preco === "Em breve" ? "Em breve" : "Esgotado")
+                      : `Preço: ${produto.preco}` 
+                    }
+                  </p>
+                  
+                  {textoEstoque && (
+                    <p className="card-text text-muted" style={{ fontSize: '0.9em', marginTop: '-10px' }}>
+                      {textoEstoque}
+                    </p>
+                  )}
+                  
+                  <button 
+                    className="btn btn-primary mt-auto"
+                    onClick={() => handleAddToCartClick(produto)}
+                    disabled={produtoIndisponivel}
+                  >
+                    Adicionar ao Carrinho
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     );
   };
 
   return (
-    // 5. Adicionamos 'position-relative' para o Modal funcionar bem
+    // O restante do seu código 'return' (Navegação das Abas, etc.)
+    // permanece exatamente o mesmo.
     <div className="container mt-5 pt-5 position-relative">
       <h1 className="text-center mb-4 mt-5">Nosso Cardápio</h1>
-
-      {/* --- Navegação das Abas (Sem alteração) --- */}
+      
       <ul className="nav nav-tabs" id="myTab" role="tablist">
         <li className="nav-item" role="presentation">
           <button
@@ -134,8 +180,7 @@ function Menu() {
           </button>
         </li>
       </ul>
-
-      {/* --- Conteúdo das Abas (Sem alteração) --- */}
+      
       <div className="tab-content" id="myTabContent">
         <div 
           className={`tab-pane fade p-3 ${abaAtiva === 'brownies' ? 'show active' : ''}`} 
@@ -166,9 +211,7 @@ function Menu() {
           {renderizarProdutos(menuData.bolosETortas)}
         </div>
       </div>
-
-      {/* 6. Adicionamos o Modal "invisível" à página */}
-      {/* Ele só vai aparecer quando 'showModal' for 'true' */}
+      
       <CustomizationModal
         product={selectedProduct}
         show={showModal}
